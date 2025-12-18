@@ -1,0 +1,294 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Piano entero*/
+
+.piano {
+    position: relative;
+    width: 700px; /* 14 teclas blancas × 50px */
+    height: 200px;
+    border: 2px solid #444;
+    background: #ccc;
+    margin-top: 20px;
+}
+
+/* Teclas blancas */
+.white-keys {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.white {
+    position: absolute; /* ← YA NO FLEX */
+    width: 50px;
+    height: 100%;
+    background: white;
+    border: 1px solid #444;
+    box-sizing: border-box;
+}
+
+/* Posiciones blancas */
+.white:nth-child(1)  { left: 0px; }
+.white:nth-child(2)  { left: 50px; }
+.white:nth-child(3)  { left: 100px; }
+.white:nth-child(4)  { left: 150px; }
+.white:nth-child(5)  { left: 200px; }
+.white:nth-child(6)  { left: 250px; }
+.white:nth-child(7)  { left: 300px; }
+.white:nth-child(8)  { left: 350px; }
+.white:nth-child(9)  { left: 400px; }
+.white:nth-child(10) { left: 450px; }
+.white:nth-child(11) { left: 500px; }
+.white:nth-child(12) { left: 550px; }
+.white:nth-child(13) { left: 600px; }
+.white:nth-child(14) { left: 650px; }
+
+/* Teclas negras */
+.black-keys {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60%;
+    width: 100%;
+    z-index: 2;
+}
+
+.black {
+    position: absolute;
+    width: 32px;
+    height: 100%;
+    background: black;
+    border-radius: 0 0 4px 4px;
+}
+
+.black:nth-child(1) { left: 35px; }   /* C#3 */
+.black:nth-child(2) { left: 85px; }   /* D#3 */
+.black:nth-child(3) { left: 185px; }  /* F#3 */
+.black:nth-child(4) { left: 235px; }  /* G#3 */
+.black:nth-child(5) { left: 285px; }  /* A#3 */
+
+.black:nth-child(6) { left: 385px; }  /* C#4 */
+.black:nth-child(7) { left: 435px; }  /* D#4 */
+.black:nth-child(8) { left: 535px; }  /* F#4 */
+.black:nth-child(9) { left: 585px; }  /* G#4 */
+.black:nth-child(10){ left: 635px; }  /* A#4 */
+
+.footer {
+    position: fixed;
+    right: 10px;
+    bottom: 5px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.layout {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin: 15px 0;
+}
+
+.sidebar a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.sidebar a:hover {
+    color: white;
+}
+
+.user-box {
+    margin-bottom: 20px;
+}
+
+.username {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #0f0;
+}
+
+.btn-logout {
+    display: inline-block;
+    padding: 6px 10px;
+    background-color: #aa0000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.btn-logout:hover {
+    background-color: #7a0000;
+}
+
+.registro-container {
+    width: 300px;
+    margin: auto;
+    margin-top: 100px;
+    padding: 30px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.registro-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.registro-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.registro-container label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.registro-container input {
+    margin-bottom: 15px;
+    padding: 8px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.registro-container button {
+    padding: 10px;
+    background-color: #0055aa;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.registro-container button:hover {
+    background-color: #003f7a;
+}
+
+.song-list {
+    margin-top: 30px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 400px;
+}
+
+.song-list h2 {
+    margin-top: 0;
+}
+
+.song-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.song-list li {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    padding: 5px;
+}
+
+.key-label {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  pointer-events: none;
+  user-select: none;
+}
+
+.white .key-label {
+  bottom: 10px;
+  font-size: 13px;
+  color: #555;
+}
+
+.black .key-label {
+  bottom: 6px;
+  font-size: 10px;
+  color: #eee;
+}
+
+.song-list ul {
+  padding: 0;
+  margin: 0;
+}
+
+.song-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.song-title {
+  flex: 1;              /* ⬅️ ocupa todo el espacio posible */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.song-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* ===============================
+   EFECTO TECLA PULSADA
+   =============================== */
+
+.white.active {
+    background: #ddd;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.4);
+}
+
+.black.active {
+    background: #222;
+    box-shadow: inset 0 0 8px rgba(255,255,255,0.2);
+}
