@@ -35,7 +35,6 @@ $titulo = trim($input["titulo"]);
 $idSecuencia = intval($input["idSecuencia"]);
 
 $idUsuario = intval($_SESSION["usuario"]["ID_Usuario"]);
-$autor     = $_SESSION["usuario"]["Nombre"] ?? '';
 
 // 🧠 Comprobar si el usuario ya tiene una canción con ese título
 $stmtCheck = $conn->prepare("
@@ -55,14 +54,13 @@ $stmtCheck->close();
 
 // 💾 Insertar canción
 $stmt = $conn->prepare("
-    INSERT INTO Canciones (Titulo, Autor, ID_Secuencia, ID_Usuario)
-    VALUES (?, ?, ?, ?)
+    INSERT INTO Canciones (Titulo, ID_Secuencia, ID_Usuario)
+    VALUES (?, ?, ?)
 ");
 
 $stmt->bind_param(
-    "ssii",
+    "sii",
     $titulo,
-    $autor,
     $idSecuencia,
     $idUsuario
 );
